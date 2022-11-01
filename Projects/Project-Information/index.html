@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #30336b;
+        color: white;
+      }
+      #container {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        margin: 15% auto;
+      }
+      #project-completed,
+      #client,
+      #project-ongoing {
+        padding: 25px;
+        font-family: monospace;
+      }
+      .counter {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: #eab676;
+        font-size: 30px;
+      }
+      span {
+        color: #eeeee4;
+      }
+    </style>
+    <!-- these links were required-->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/fontawesome.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/solid.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="container">
+      <!--1st div-->
+      <div id="project-completed">
+        <i class="fas fa-mug-hot fa-3x"></i>
+        <div class="counter" data-target="4000"></div>
+        <span>Project Completed</span>
+      </div>
+      <!-- 2nd div -->
+      <div id="client">
+        <i class="fa fa-users fa-3x"></i>
+        <div class="counter" data-target="15000"></div>
+        <span>Our Happy Clients</span>
+      </div>
+      <!-- 3rd div -->
+      <div id="project-ongoing">
+        <i class="fa-solid fa-list-check fa-3x"></i>
+        <div class="counter" data-target="500"></div>
+        <span>OnGoing Projects</span>
+      </div>
+    </div>
+
+    <script>
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach((counter) => {
+        counter.innerHTML = 0;
+
+        const updateCounter = () => {
+          //counter.innerHTML will return string .
+          let initialCounter = Number(counter.innerHTML);
+          // this + sign is a unary operator directly convert the string res to num.
+          let targetCounter = +counter.getAttribute("data-target");
+          let incrementCounter = targetCounter / 100;
+
+          if (initialCounter < targetCounter) {
+            initialCounter = initialCounter + incrementCounter;
+            counter.innerHTML = initialCounter;
+            setTimeout(updateCounter, 20);
+          }
+        };
+        updateCounter();
+      });
+    </script>
+  </body>
+</html>

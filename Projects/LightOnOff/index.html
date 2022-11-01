@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #30336b;
+        color: white;
+      }
+      h1 {
+        width: 40%;
+        margin: 20 auto;
+      }
+      .button {
+        font-family: revert;
+        background-color: cyan;
+        padding: 25px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: black;
+        font-size: 12px;
+        font-weight: bold;
+      }
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        height:70%;
+        border-radius: 20px;
+      }
+      .buttonstyle {
+        width: 35%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Can you turn the light on ?</h1>
+      <img class="image" src="images/lightoff.jpg" />
+      <div class="buttonstyle">
+        <button class="button buttonon">Turn on the Light</button>
+        <button class="button buttonoff">Turn off the Light</button>
+      </div>
+    </div>
+    <script>
+      const onbutton = document.querySelector(".buttonon");
+      const offbutton = document.querySelector(".buttonoff");
+
+      const buttonon = () => {
+        document.querySelector(".image").src = "./images/lighton.jpg";
+      };
+      const buttonoff = () => {
+        document.querySelector(".image").src = "./images/lightoff.jpg";
+      };
+      onbutton.addEventListener("click", buttonon);
+      offbutton.addEventListener("click", buttonoff);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #30336b;
+        color: white;
+      }
+      h1 {
+        width: 40%;
+        margin: 15% auto;
+      }
+      .fa{
+        padding:10px;
+        font-size: larger;
+      }
+    </style>
+    <!-- these links were required-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="container">
+      <h1>
+        I am a Thermometer 
+        <span id="thermometer" class="thermometer">
+          <!-- this i class is also required-->
+          <i class="fa" id="fa"></i>
+        </span>
+      </h1>
+    </div>
+    <script>
+      const tempLoad = () => {
+        let thermo = document.getElementById("fa");
+        thermo.innerHTML = "&#xf2ca;"
+        thermo.style.color="white";
+        setTimeout(() => {
+          thermo.innerHTML = "&#xf2c9;";
+          thermo.style.color = "yellow";
+        }, 1000);
+        setTimeout(() => {
+          thermo.innerHTML = "&#xf2c8;";
+          thermo.style.color = "green";
+        }, 2000);
+        setTimeout(() => {
+          thermo.innerHTML = "&#xf2c7;";
+          thermo.style.color = "red";
+        }, 3000);
+      };
+
+      tempLoad();
+      setInterval(() => {
+        tempLoad();
+      }, 4000);
+    </script>
+  </body>
+</html>

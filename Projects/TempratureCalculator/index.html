@@ -1,0 +1,112 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #30336b;
+        color: white;
+      }
+      h1 {
+	  font-size:25px;
+        width: 50%;
+        margin: 30px auto;
+		padding:20px;
+      }
+      .fa{
+        padding:10px;
+        font-size: larger;
+      }
+	  #inputbox,#buttoncontainer{
+	  margin-left:auto;
+	  margin-right:auto;
+	  width:50%;
+	  }
+	  #container{
+	  margin-left:auto;
+	  margin-right:auto;
+	  border-radius:10px;
+	  width:50%;
+	  padding-bottom:10px;
+	  background:aliceblue;
+	  color:black;
+	  min-height:300px;
+	  }
+	  input, select{
+	  border-radius:5px;
+	  padding :10px;
+	  }
+	  select
+	  {
+	  font-weight:bold;
+	  }
+	  #button{
+	  padding:10px;
+	  border-radius : 5px;
+	  margin-right:auto;
+	  margin-left:auto;
+	  font-size15px;
+	  font-weight:bold;
+	  background : darkseagreen;
+	  
+	  }#response{
+	      margin-left:auto;
+		  margin-right:auto;
+		  width:50%;
+		  padding:10px;
+		  font-weight:bold;
+		  font-size:20px;
+		  font-family:revert;
+	  }
+    </style>
+    <!-- these links were required-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div id="container">
+      <h1>
+        Convert the Temprature
+        <span id="thermometer" class="thermometer">
+          <!-- this i class is also required-->
+          <i class="fa" id="fa"></i>  </span>       
+      </h1>
+	  <div id="inputbox">
+		  <input type="text" placeholder="Enter the temprature" name="temp" id="temp"/>
+		  <select id="select">
+		  <option value=""></option>
+		  <option value="celsius" style="padding : 5px">Celsius</option>
+		  <option value="fahrenheit">Fahrenheit</option>
+		  </select><br><br>
+		 </div>
+		  <div id="buttoncontainer">
+		  <button id="button">Convert</button>
+		  </div>
+		  <div id="response">
+		  </div>
+
+    </div>
+    <script>
+	   
+		 
+      const convertTemprature = () => {
+         let temp=document.getElementById('temp').value;
+		 let option=document.getElementById('select').value;
+		 let response=document.getElementById("response");
+		 let res=null;
+							 if(option=="celsius")	{
+							    res=Math.round((temp*1.8)+32);
+								res=`= ${res}<sup>o</sup>F`;
+							   }
+							else{
+							 res=(temp-32)*5/9;
+							 res=`= ${res}<sup>o</sup>C`;
+							}
+		
+		response.innerHTML=res;							
+		
+      };
+	   let button=document.getElementById("button");
+		 button.addEventListener('click',convertTemprature);
+    
+    </script>
+  </body>
+</html>

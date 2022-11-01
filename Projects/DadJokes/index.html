@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #30336b;
+        color: white;
+      }
+      h1 {
+	  font-size:25px;
+        width: 50%;
+        margin: 30px auto;
+		padding:20px;
+      }
+      .fa{
+        padding:10px;
+        font-size: larger;
+      }
+	  #inputbox,#buttoncontainer{
+	  margin-left:auto;
+	  margin-right:auto;
+	  width:50%;
+	  }
+	  #container{
+	  margin-left:auto;
+	  margin-right:auto;
+	  border-radius:10px;
+	  width:50%;
+	  padding-bottom:10px;
+	  background:aliceblue;
+	  color:black;
+	  min-height:300px;
+	  }
+	  input, select{
+	  border-radius:5px;
+	  padding :10px;
+	  }
+	  #buttoncontainer{
+	  margin-left:auto;
+	  margin-right:auto;
+	  width:50%;
+	  }
+	  #button{
+	  border-radius : 5px;
+	  margin-right:auto;
+	  margin-left:auto;
+	  font-size:15px;
+	  font-weight:bold;
+	  background : darkseagreen;
+	  margin-top:10px;
+	  padding :10px;
+	  cursor: pointer;
+	  box-shadow: 2px 2px;
+	  
+	  }
+	  #button:hover {background-color: #76b5c5}
+
+
+	  #dadjoke{
+		  background:darkcyan;
+	      margin-left:auto;
+		  margin-right:auto;
+		  width:50%;
+		  padding:10px;
+		  font-weight:bold;
+		  font-size:20px;
+		  font-family:revert;
+		  color: black;
+		  border-radius: 6px;
+	  }
+    </style>
+    <!-- these links were required-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/fontawesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/v5-font-face.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/v4-font-face.min.css">
+  </head>
+  <body>
+    <div id="container">
+      <h1>
+        Dad Jokes 
+        <span id="jokes" class="jokes">
+          <!-- this i class is also required-->
+          <i class="fa" id="fa"></i>      
+      </h1>
+	  <div id="dadjoke" style="font-family: monospace;"> Loading ...</div>
+	   <div id="buttoncontainer">
+        <button id="button">Next</button>
+	   </div>
+    <script>
+	
+           const fontawsomeicon=document.getElementById('fa');
+		   fontawsomeicon.innerHTML="&#xf599;"
+		   fontawsomeicon.style.color="darkblue"
+		const jokes=()=>{
+			let dadjokes=document.getElementById("dadjoke");
+		const setHeader={
+			headers:{
+				Accept:"application/json"
+		    }
+		}
+
+		fetch('https://icanhazdadjoke.com',setHeader)
+		.then((res)=>res.json())
+		.then((data)=>{
+			dadjokes.innerHTML=data.joke
+		})
+		.catch((error)=>{
+             console.log("error response : ",error)
+		})
+		
+	}
+	jokes();
+	let nextButton=document.getElementById('button');
+	nextButton.addEventListener('click',jokes);
+	</script>
+  </body>
+</html>

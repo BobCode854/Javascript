@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #30336b;
+        color: white;
+      }
+      h1 {
+        width: 30%;
+        margin: 3% auto;
+      }
+      .fa {
+        padding: 8px;
+        font-size: larger;
+      }
+      .timerBox1 {
+        width: 10%;
+        background-color: antiquewhite;
+        min-height: 50px;
+        border-radius: 8px;
+        margin-left: auto;
+
+        color: black;
+      }
+      .timerBox2 {
+        width: 10%;
+        background-color: aquamarine;
+        min-height: 50px;
+        border-radius: 8px;
+        padding: 2px;
+        color: black;
+      }
+      .timerBox3,
+      .timerBox4 {
+        width: 10%;
+        background-color: brown;
+        min-height: 50px;
+        border-radius: 8px;
+        margin-left: 10px;
+        padding: 2px;
+        color: black;
+      }
+      .timerBox4 {
+        width: 15%;
+        margin-top: auto;
+        margin-left: 25px;
+        background-color: cadetblue;
+      }
+      .timer {
+        display: flex;
+        width: 60%;
+        /* padding: 15px; */
+        background: black;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 15px;
+        /* width: 68%; */
+        /* width: 50%; */
+        /* margin-left: 52px; */
+        /* padding-left: 2px; */
+        padding: 60px;
+        padding-right: 300px;
+      }
+      #colon {
+        margin: 4% 2%;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      span {
+        font-size: 60px;
+        padding: 5px;
+      }
+    </style>
+    <!-- these links were required-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <h1>
+        Digital Clock
+        <span id="thermometer" class="thermometer">
+          <!-- this i class is also required-->
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+        </span>
+      </h1>
+      <div class="timer">
+        <div class="timerBox1"><span id="hour">05</span></div>
+        <span id="colon"> : </span>
+        <div class="timerBox2"><span id="minute">30</span></div>
+        <span id="colon"> : </span>
+        <div class="timerBox3"><span id="second">12</span></div>
+        <div class="timerBox4"><span id="timezone"></span></div>
+      </div>
+    </div>
+
+    <script>
+      var hour = document.getElementById("hour");
+      var minute = document.getElementById("minute");
+      var second = document.getElementById("second");
+      var timezone = document.getElementById("timezone");
+
+      function timer() {
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+
+        hour.innerHTML = hours;
+        minute.innerHTML = minutes;
+        if (seconds < 10 ) {
+          second.innerHTML = `0${seconds}`;
+        } else {
+          second.innerHTML = seconds;
+        }
+        if (minutes < 10 ) {
+          minute.innerHTML = `0${minutes}`;
+        } else {
+          minute.innerHTML = minutes;
+        }
+        if (hours < 10 ) {
+          hour.innerHTML = `0${hours}`;
+        } else {
+          hour.innerHTML = hours;
+        }
+
+        if (hours > 12) {
+          timezone.innerHTML = "PM";
+        } else {
+          timezone.innerHTML = "AM";
+        }
+      }
+      timer();
+      setInterval(timer, 1000);
+    </script>
+  </body>
+</html>
