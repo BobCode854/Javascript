@@ -9,7 +9,8 @@ console.log(myAge)
 2) Rest of the variable name can include any letter, any number,underscore and dollar.
 3) Variable names are case sensitive
 4) No limt to the length of the variable name
-5) Reserved words are not allowed for variable name
+5) Reserved words are not allowed for variable name.
+
 
 
 */
