@@ -5,3 +5,5 @@
 # "editor.tokenColorCustomizations": {
         "comments": "#00ffea"
     },
+
+# install sublime text from vs code extension
