@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Events Example</title>
+  <style>
+    .button {
+      padding: 10px 15px;
+      background-color: lightblue;
+      border: none;
+      cursor: pointer;
+    }
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    function showAlert() {
+      alert("Button clicked!");
+    }
+
+    function changeColor(element) {
+      element.style.backgroundColor = "lightgreen";
+    }
+
+    function showInput(value) {
+      document.getElementById("display").textContent = "You typed: " + value;
+    }
+
+    function selectChange(selectElement) {
+      alert("You selected: " + selectElement.value);
+    }
+  </script>
+</head>
+<body>
+ <ul>
+  <li> Wake Up</li>
+  <li> Eat</li>
+  <li> Study</li>
+  <li> Sleep</li>
+ </ul>
+  <!-- onclick event -->
+  <button class="button" onclick="showAlert()">Click Me</button>
+  <button class="check" onclick="showAlert()">Click Me for adding element</button>
+  <!-- onmouseover event -->
+  <div class="box" onmouseover="changeColor(this)">
+    Hover over this box to change its color
+  </div>
+
+  <!-- oninput event -->
+  <input type="text" placeholder="Type something..." oninput="showInput(this.value)">
+  <p id="display"></p>
+
+  <!-- onchange event -->
+  <select onchange="selectChange(this)">
+    <option value="">Select a fruit</option>
+    <option value="Apple">Apple</option>
+    <option value="Banana">Banana</option>
+    <option value="Cherry">Cherry</option>
+  </select>
+
+  <script src="script.js"></script>
+</body>
+</html>

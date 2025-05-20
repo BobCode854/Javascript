@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parent, Children, and Siblings</title>
+  <style>
+    .parent {
+      border: 2px solid #444;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .child {
+      padding: 5px;
+      background-color: #eef;
+    }
+    .sibling {
+      padding: 5px;
+      background-color: #cfc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Parent element -->
+  <div class="parent" id="parent-div">
+    <h2>Parent Div</h2>
+
+    <!-- Children elements -->
+    <div class="child">Child 1</div>
+    <div class="child">Child 2</div>
+    <div class="child">Child 3</div>
+  </div>
+
+  <!-- Sibling element to parent -->
+  <div class="sibling" id="sibling-div">
+    I am a sibling to the parent div.
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

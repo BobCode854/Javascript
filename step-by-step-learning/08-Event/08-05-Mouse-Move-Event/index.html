@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .event-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .event-title {
+      font-size: 32px;
+      color: #333;
+    }
+    .event-date,
+    .event-location {
+      font-size: 18px;
+      color: #555;
+    }
+    .event-description {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #444;
+    }
+    .register-button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .register-button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="event-container" style=" border : 2px solid black">
+    <h1 class="event-title">Tech Innovators Conference 2025</h1>
+    <p class="event-date">Date: June 12, 2025</p>
+    <p id="location"  class="event-location">Location: Silicon Valley, California</p>
+    <div class="event-description">
+      <p>
+        Join leading minds in technology and innovation at this one-day event packed with talks, workshops, and networking opportunities. Whether you're a developer, startup founder, or tech enthusiast, this conference has something for you.
+      </p>
+    </div>
+    <button class="register-button">Register Now</button>
+  </div>
+ <script src = "script.js"/>
+</body>
+</html>
